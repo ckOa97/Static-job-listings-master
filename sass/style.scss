@@ -1,0 +1,194 @@
+@use './colors';
+@use './dynamic-classes';
+
+:root {
+    font-size: clamp(12px, calc(12px + (15 - 12) * ((100vw - 320px) / (1600 - 320))), 15px);
+}
+
+body {
+    min-height: 100vh;
+    min-width: 220px;
+    background-color: colors.$light-grayish-cyan-background;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    header {
+        background-image: url('../images/bg-header-desktop.svg');
+        background-color: colors.$desaturated-dark-cyan;
+        height: 156px;
+        z-index: 1;
+        > div {
+            transform: translateY(50%);
+            .filter-container {
+                box-shadow: 0 .8rem 1rem 0 colors.$box-shadow-color;
+                position: relative;
+                background-color: white;
+                padding: 1.333rem 2rem;
+                @media screen and (max-width: 600px) {
+                    padding: 1.333rem 1.5rem;
+                }
+                > div {
+                    > div:first-of-type {                        
+                        div {
+                            span {
+                                background-color: colors.$light-grayish-cyan-filter-tablets;
+                                color: colors.$desaturated-dark-cyan;
+                            }
+                            button {
+                                background-color: colors.$desaturated-dark-cyan;
+                                border-style: none;
+                                transition: background-color .15s;
+                                &:hover {
+                                    background-color: colors.$very-dark-grayish-cyan;
+                                }
+                                &:focus-visible {
+                                    outline: 1px solid colors.$very-dark-grayish-cyan;
+                                    outline-offset: -1px;
+                                }
+                                &:active {
+                                    background-color: colors.$very-dark-grayish-cyan;
+                                }
+                            }
+                        }
+                    }
+                    > div:last-of-type {
+                        button {
+                            background-color: transparent;
+                            border-style: none;
+                            color: colors.$dark-grayish-cyan;
+                            &:hover {
+                                color: colors.$desaturated-dark-cyan;
+                                text-decoration: underline;
+                            }
+                            &:focus-visible {
+                                outline: 1px solid colors.$very-dark-grayish-cyan;
+                                outline-offset: -1px;
+                            }
+                            &:active {
+                                color: colors.$desaturated-dark-cyan;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        gap: 1.6rem;
+        @media screen and (max-width: 575px) {
+            gap: 3.85rem;
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+        }
+        > div {
+            position: relative;
+            > div:first-of-type {
+                position: absolute;
+                top: 0;
+                padding-left: calc(var(--bs-gutter-x) * .5);
+                transform: translateY(-50%);
+                img {
+                    width: 4.5rem;
+                }
+            }
+            > div:last-of-type {
+                background-color: white;
+                box-shadow: 0 .8rem 1rem 0 colors.$box-shadow-color;
+                overflow: hidden;
+                > div {
+                    > div {
+                        @media screen and (max-width: 600px) {
+                            padding: 1.5rem 1.5rem 1.5rem 1.166rem;
+                        }
+                        @media screen and (max-width: 575px) {
+                            padding: 2.75rem 1.5rem 1.5rem 1.166rem;
+                        }
+                        padding: 2rem 2rem 2rem 1.666rem;
+                        > div:first-of-type {
+                            @media screen and (max-width: 575px) {
+                                border-bottom: 1px solid colors.$dark-grayish-cyan;
+                            }
+                            > div {
+                                > div {
+                                    //> div:first-of-type {}
+                                    > div:last-of-type {
+                                        > div:first-of-type {
+                                            strong {
+                                                @media screen and (max-width: 575px) {
+                                                    font-size: 1.25rem;
+                                                }
+                                                color: colors.$desaturated-dark-cyan;
+                                                font-size: 1.1rem;
+                                            }
+                                            .badge-container {
+                                                span {
+                                                    padding: .45rem .5rem .2rem .5rem;
+                                                }
+                                                .new-badge {
+                                                    background-color: colors.$desaturated-dark-cyan;
+                                                }
+                                                .featured-badge {
+                                                    background-color: colors.$very-dark-grayish-cyan;
+                                                }
+                                            }
+                                        }
+                                        h1 {
+                                            a {
+                                                text-decoration: none;
+                                                color: colors.$very-dark-grayish-cyan;
+                                                transition: color .15s;
+                                                &:hover {
+                                                    color: colors.$desaturated-dark-cyan;
+                                                }
+                                                &:focus-visible {
+                                                    outline: 1px solid colors.$very-dark-grayish-cyan;
+                                                    outline-offset: -1px;
+                                                }
+                                                &:active {
+                                                    color: colors.$desaturated-dark-cyan;
+                                                }
+                                            }
+                                        }
+                                        > div:last-of-type {
+                                            white-space: nowrap;
+                                            color: colors.$dark-grayish-cyan;
+                                            .dot {
+                                                line-height: 1.066rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        > div:last-of-type {
+                            ul {
+                                li {
+                                    button {
+                                        background-color: colors.$light-grayish-cyan-filter-tablets;
+                                        color: colors.$desaturated-dark-cyan;
+                                        border-style: none;
+                                        &:hover {
+                                            background-color: colors.$desaturated-dark-cyan;
+                                            color: white;
+                                        }
+                                        &:focus-visible {
+                                            background-color: colors.$light-grayish-cyan-filter-tablets;
+                                            color: colors.$desaturated-dark-cyan;
+                                            box-shadow: none;
+                                            outline: 1px solid colors.$very-dark-grayish-cyan;
+                                            outline-offset: -1px;
+                                        }
+                                        &:active {
+                                            background-color: colors.$desaturated-dark-cyan !important;
+                                            color: white !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

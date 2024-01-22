@@ -1,0 +1,9 @@
+@use './colors';
+
+.featured-border {
+    border-left: 0.334rem solid colors.$desaturated-dark-cyan;
+}
+
+.non-featured-border {
+    border-left: 0.334rem solid transparent;
+}
